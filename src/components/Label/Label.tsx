@@ -10,7 +10,8 @@ const StyledLabel = styled.label<LabelProps>`
   display: inline-block;
   padding: 8px;
   font-weight: bold;
-  background-color: ${(props) => (props.disabled ? '#cccccc' : 'transparent')};
+  background-color: ${(props) =>
+    props.disabled !== undefined && props.disabled ? '#cccccc' : 'transparent'};
 `;
 
 const Label: React.FC<LabelProps> = ({ text, disabled }) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { type ButtonProps } from './Button.types';
-// test
+
 const StyledButton = styled.button<ButtonProps>`
   border: 0;
   line-height: 1;
@@ -19,12 +19,18 @@ const StyledButton = styled.button<ButtonProps>`
       : '14px 30px 16px'};
   color: '#ffffff';
   background-color: ${(props) =>
-    props.disabled ? '#cccccc' : props.backgroundColor};
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-  pointer-events: ${(props) => (props.disabled ? 'none' : 'auto')};
+    props.disabled !== undefined && props.disabled
+      ? '#cccccc'
+      : props.backgroundColor};
+  opacity: ${(props) =>
+    props.disabled !== undefined && props.disabled ? 0.5 : 1};
+  cursor: ${(props) =>
+    props.disabled !== undefined && props.disabled ? 'not-allowed' : 'pointer'};
+  pointer-events: ${(props) =>
+    props.disabled !== undefined && props.disabled ? 'none' : 'auto'};
   &:hover {
-    background-color: ${(props) => (props.primary ? '#55bd90' : '#6bedb5')};
+    background-color: ${(props) =>
+      props.primary != null ? '#55bd90' : '#6bedb5'};
   }
   &:active {
     border: solid 2px #1b116e;
