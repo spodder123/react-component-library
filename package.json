@@ -1,7 +1,7 @@
 {
   "name": "@spodder123/react-component-library",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/spodder123"
+    "registry": "https://npm.pkg.github.com/spodder123"
   },
   "version": "0.0.1",
   "description": "A simple template for a custom React component library",
@@ -13,10 +13,11 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prettier": "prettier --check .",
-    "pre-commit": "npm run prettier && npm run lint && npm run test"
+    "pre-commit": "npm run prettier && npm run lint && npm run test",
+    "prepare": "husky install"
   },
   "husky": {
-    "hooks":{
+    "hooks": {
       "pre-commit": "npm run pre-commit"
     }
   },
